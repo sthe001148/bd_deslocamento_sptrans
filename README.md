@@ -117,6 +117,8 @@ O ambiente de produção foi modularizado para garantir a separação de conceit
 │   └── 3-queries_consumo.sql        # Data Manipulation Language (DML) - Relatórios de Negócio
 └── README.md
 
+```
+
 🚀 Como Executar
 Pré-requisitos
 Possuir o SGBD MySQL Server 8.0+ instalado localmente.
@@ -141,9 +143,9 @@ SOURCE sql/3-queries_consumo.sql;
 
 
 👥 Equipe de Desenvolvimento
-
 A execução deste ecossistema foi dividida em etapas com os seguintes responsáveis técnicos
 Engenharia de Requisitos & Escopo: Desenvolvimento conjunto por todos os integrantes.
+
 Coleta de Dados Públicos: [brunaluiza18](https://github.com/brunaluiza18)
 Tratamento e Filtragem de Dados: [nicolee-kats](https://github.com/nicolee-kats)
 Modelagem e DBA MySQL: [miguel676726](https://github.com/miguel676726)
