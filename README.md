@@ -144,7 +144,7 @@ SOURCE sql/3-queries_consumo.sql;
 
 A execução deste ecossistema foi dividida em etapas com os seguintes responsáveis técnicos
 Engenharia de Requisitos & Escopo: Desenvolvimento conjunto por todos os integrantes.
-(Coleta de Dados Públicos): brunaluiza18
-(Tratamento e Filtragem de Dados): nicolee-kats
-(Modelagem e DBA MySQL): miguel676726
-(Documentação e Regras de Negócio): Sthe001148
+(Coleta de Dados Públicos): https://github.com/brunaluiza18
+(Tratamento e Filtragem de Dados): https://github.com/nicolee-kats
+(Modelagem e DBA MySQL): https://github.com/miguel676726
+(Documentação e Regras de Negócio): https://github.com/sthe001148
