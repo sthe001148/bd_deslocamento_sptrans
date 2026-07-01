@@ -58,12 +58,41 @@ A inteligência do negócio reside na capacidade de responder queries complexas,
 O banco foi projetado utilizando o modelo relacional (SQL) devido à forte consistência e natureza estruturada das entidades envolvidas.
 
 ### 📐 Diagrama Relacional Textual (MER)
-```text
-  [Distrito] 1 --------- N [Ponto_parada]
-  [Distrito] 1 --------- N [Deslocamento_estimado] (Origem)
-  [Distrito] 1 --------- N [Deslocamento_estimado] (Destino)
-  [linha]    1 --------- N [Deslocamento_estimado]
-```
+
+-- Tabela Distrito
+CREATE TABLE Distrito (
+    id_distrito INTEGER PRIMARY KEY,
+    nome VARCHAR(100)
+);
+
+-- Tabela Linha
+CREATE TABLE Linha (
+    id_linha INTEGER PRIMARY KEY,
+    nome VARCHAR(100)
+);
+
+-- Tabela Ponto de Parada
+CREATE TABLE Ponto_Parada (
+    id_ponto INTEGER PRIMARY KEY,
+    nome VARCHAR(100),
+    id_distrito INTEGER,
+    FOREIGN KEY (id_distrito) REFERENCES Distrito(id_distrito)
+);
+
+-- Tabela Deslocamento Estimado
+CREATE TABLE Deslocamento_Estimado (
+    id_deslocamento INTEGER PRIMARY KEY,
+    tempo_estimado INTEGER,
+    
+    -- Relacionamentos
+    id_linha INTEGER,
+    id_distrito_origem INTEGER,
+    id_distrito_destino INTEGER,
+
+    FOREIGN KEY (id_linha) REFERENCES Linha(id_linha),
+    FOREIGN KEY (id_distrito_origem) REFERENCES Distrito(id_distrito),
+    FOREIGN KEY (id_distrito_destino) REFERENCES Distrito(id_distrito)
+);
 
 ### 📖 Dicionário de Dados
 
