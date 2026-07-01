@@ -83,12 +83,14 @@ O banco foi projetado utilizando o modelo relacional (SQL) devido à forte consi
 | `nome_linha` | VARCHAR(150) | NOT NULL | Descrição do itinerário da linha. |
 | `tipo_dia` | VARCHAR(30) | NOT NULL | Escala de operação (Dia útil, Sábado, Domingo). |
 
+
 #### 3. Tabela: `Ponto_parada`
 | Atributo | Tipo de Dado | Restrição | Descrição |
 | :--- | :--- | :--- | :--- |
 | `id_ponto` | INT | PK, AI | Código de identificação física do ponto. |
 | `endereco_ponto` | VARCHAR(255) | NOT NULL | Endereço ou localização aproximada. |
 | `id_distrito` | INT | FK | Vínculo com a tabela de Distritos. |
+
 
 #### 4. Tabela: `Deslocamento_estimado`
 | Atributo | Tipo de Dado | Restrição | Descrição |
@@ -98,6 +100,7 @@ O banco foi projetado utilizando o modelo relacional (SQL) devido à forte consi
 | `id_distrito_destino` | INT | FK | Distrito final de destino da viagem. |
 | `id_linha_utilizada` | INT | FK | Linha de ônibus monitorada. |
 | `tempo_medio_espera_minutos`| DECIMAL(5,2) | NOT NULL | Tempo médio de espera calculado no ponto. |
+
 
 ---
 
@@ -117,6 +120,7 @@ O ambiente de produção foi modularizado para garantir a separação de conceit
 │   ├── 2-seed.sql                   # Scripts de carga automatizada via CSV
 │   └── 3-queries_consumo.sql        # Data Manipulation Language (DML) - Relatórios de Negócio
 └── README.md
+
 🚀 Como Executar
 Pré-requisitos
 Possuir o SGBD MySQL Server 8.0+ instalado localmente.
@@ -138,15 +142,13 @@ Execute as queries analíticas de consumo para auditar os resultados obtidos de 
 
 SQL
 SOURCE sql/3-queries_consumo.sql;
+
+
 👥 Equipe de Desenvolvimento
+
 A execução deste ecossistema foi dividida em etapas com os seguintes responsáveis técnicos
-
 Engenharia de Requisitos & Escopo: Desenvolvimento conjunto por todos os integrantes.
-
 Data Ingestion (Coleta de Dados Públicos): Bruna
-
 Data Quality (Tratamento e Filtragem de Dados): Nicole
-
 Database Architecture (Modelagem e DBA MySQL): Miguel
-
 Business Analytics (Documentação e Regras de Negócio): Stefany
