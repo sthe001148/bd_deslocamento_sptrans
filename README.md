@@ -1,126 +1,152 @@
-<!-- ÍCONES E BADGES DE TECNOLOGIAS -->
 <p align="center">
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL Badges" />
-  <img src="https://img.shields.io/badge/SQL-CC292B?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQL Badges" />
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badges" />
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+  <img src="https://img.shields.io/badge/SQL-CC292B?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQL" />
+  <img src="https://img.shields.io/badge/Database-Relational-blue?style=for-the-badge" alt="Database Type" />
 </p>
 
-<!-- TÍTULO DO PROJETO -->
 <br />
 <p align="center">
-  <h3 align="center">PROJETO INTEGRADOR I</h3>
+  <h1 align="center">Otimização de Mobilidade Urbana: bd_deslocamento_sptrans</h1>
   <p align="center">
-    <strong>bd_deslocamento_sptrans</strong>
+    Análise Estatística de Capilaridade e Tempo de Espera do Sistema de Transporte Coletivo (SPTrans) nas Zonas Norte e Leste de São Paulo.
     <br />
-    Análise de Eficiência e Mobilidade Urbana nas Zonas Norte e Leste de São Paulo (SPTrans)
-    <br />
-    ·
-    <br />
-    <strong>Integrantes do Grupo:</strong><br />
-    Nicole · Miguel · Bruna · Stefany
+    <a href="#-como-executar"><strong>Explorar Documentação »</strong></a>
   </p>
 </p>
 
-<!-- ÍNDICE / TABLE OF CONTENTS -->
 <details>
-  <summary>Sumário</summary>
+  <summary>📌 Sumário Executivo</summary>
   <ol>
-    <li>
-      <a href="#sobre-o-projeto">Sobre o Projeto</a>
-      <ul>
-        <li><a href="#a-necessidade">A Necessidade</a></li>
-        <li><a href="#a-solução-encontrada">A Solução Encontrada</a></li>
-      </ul>
-    </li>
-    <li><a href="#tecnologias-utilizadas">Tecnologias Utilizadas</a></li>
-    <li><a href="#modelo-do-banco-de-dados">Modelo do Banco de Dados</a></li>
-    <li>
-      <a href="#estrutura-de-arquivos-do-repositório">Estrutura de Arquivos</a>
-      <ul>
-        <li><a href="#arquivos-csv-das-entidades">Arquivos CSV (Carga de Dados)</a></li>
-        <li><a href="#arquivos-sql-de-consumo">Arquivos SQL (Estrutura e Consumo)</a></li>
-      </ul>
-    </li>
-    <li><a href="#como-executar">Como Executar o Projeto</a></li>
+    <li><a href="#-sobre-o-projeto">Sobre o Projeto</a></li>
+    <li><a href="#-cenário-e-necessidade-de-negócio">Cenário e Necessidade de Negócio</a></li>
+    <li><a href="#-solução-desenvolvida">Solução Desenvolvida</a></li>
+    <li><a href="#-modelagem-e-arquitetura-de-dados">Modelagem e Arquitetura de Dados</a></li>
+    <li><a href="#-estrutura-do-repositório">Estrutura do Repositório</a></li>
+    <li><a href="#-como-executar">Como Executar</a></li>
+    <li><a href="#-equipe-de-desenvolvimento">Equipe de Desenvolvimento</a></li>
   </ol>
 </details>
 
 ---
 
-## Sobre o Projeto
+## 📖 Sobre o Projeto
 
-Este repositório contém o desenvolvimento do banco de dados relacional construído com base nas diretrizes do documento de planejamento `20260603-desenho-projeto-integrador.pdf`, atendendo aos requisitos da disciplina **UC03 (Modelagem de Dados e SQL)**. O sistema foi projetado para analisar a capilaridade da rede de ônibus da SPTrans na cidade de São Paulo.
-
-### A Necessidade
-Nas regiões periféricas e densamente povoadas de São Paulo, como a **Zona Norte e a Zona Leste**, os cidadãos enfrentam tempos de deslocamento diários excessivos. Embora a malha rodoviária cubra o município, a frequência e a oferta de linhas variam de forma desigual entre os distritos. 
-
-**O problema central:** Faltavam evidências centralizadas e dados estruturados que provassem o impacto real desse tempo de espera na rotina da população. Sem ferramentas analíticas organizadas, os gestores públicos encontram barreiras para tomar decisões eficientes.
-
-### A Solução Encontrada
-A solução desenvolvida consiste em um **Banco de Dados Relacional** local que armazena, de forma estruturada, registros numéricos e textuais de mobilidade urbana. O banco organiza informações sobre distritos, rotas de ônibus, pontos físicos e tempos de trânsito.
-
-Por meio de consultas SQL analíticas, o sistema gera relatórios consolidados que servem como evidências para a **Prefeitura de São Paulo** e para os **gestores da SPTrans** identificarem os territórios críticos com menor oferta de linhas e os maiores tempos de espera.
+O **bd_deslocamento_sptrans** é um banco de dados relacional desenvolvido como entrega consolidada da unidade **UC03 (Modelagem de Dados e SQL)**. O projeto visa centralizar, estruturar e auditar dados operacionais de transporte público da SPTrans, mapeando gargalos logísticos estruturais de deslocamento na capital paulista.
 
 ---
 
-## Tecnologias Utilizadas
+## 🎯 Cenário e Necessidade de Negócio
 
-* **SGBD:** MySQL (Ambiente Local)
-* **Linguagem:** SQL (DDL para criação de tabelas e DML para extração de dados)
+Nas macro regiões da **Zona Norte e Zona Leste de São Paulo**, caracterizadas por alta densidade demográfica, o tempo despendido pela população em deslocamentos diários é crítico. Embora a malha logística da SPTrans cubra geograficamente o município, a frequência de frotas e a capilaridade das linhas apresentam alta variabilidade entre distritos.
 
----
-
-## Modelo do Banco de Dados
-
-O modelo de dados foi estruturado de forma relacional focado nas seguintes entidades:
-
-### Entidades e Atributos:
-
-* **`Distrito`**: `id_distrito`, `nome_distrito`, `zona`, `populacao_estimada`.
-  * *Importância:* Identifica a concentração demográfica e mapeia quem mais necessita do serviço de transporte.
-* **`linha`**: `id_linha`, `codigo_linha`, `nome_linha`, `tipo_dia`.
-  * *Importância:* Registra o planejamento das frotas, códigos de linhas e a operação de acordo com os dias (úteis ou fins de semana).
-* **`Ponto_parada`**: `id_ponto`, `endereco_ponto`, `id_distrito`.
-  * *Importância:* Mapeia geograficamente onde os locais de embarque e desembarque acontecem na prática.
-* **`Deslocamento_estimado`**: `id_deslocamento`, `id_distrito_origem`, `id_distrito_destino`, `id_linha_utilizada`, `tempo_medio_espera_minutos`.
-  * *Importância:* Tabela de métricas que permite medir o tempo médio de espera entre a origem e o destino para avaliar a eficiência do sistema.
+* **O Gargalo:** Havia uma escassez de dados estruturados e centralizados que servissem como evidências estatísticas do impacto do tempo de espera na rotina dos cidadãos.
+* **Impacto:** Sem uma base de dados normalizada, a tomada de decisão por parte da **Prefeitura de São Paulo** e dos **gestores da SPTrans** para otimização de frotas tornava-se puramente reativa e carente de precisão técnica.
 
 ---
 
-## Estrutura de Arquivos do Repositório
+## 💡 Solução Desenvolvida
 
-O projeto está organizado com diretórios específicos para os dados e para os scripts do banco:
+Foi implementado um ecossistema de banco de dados baseado em **Engenharia de Dados Relacional**. O sistema consome dados brutos de logística urbana, processa indicadores de tempo e popula tabelas normalizadas para cruzamento analítico. 
 
-### 📊 Arquivos CSV (Das Entidades)
-Disponíveis na pasta `/data`, contêm a carga de dados públicos tratados para o preenchimento das tabelas:
-* `distritos.csv`: Listagem de distritos mapeados com dados demográficos.
-* `linhas.csv`: Dados de identificação das rotas operantes da SPTrans.
-* `pontos_parada.csv`: Localização urbana dos pontos de parada.
-* `deslocamentos_estimados.csv`: Amostra de tempos de espera registrados e calculados por minutos.
-
-### 💻 Arquivos SQL (De Consumo)
-Disponíveis na pasta `/sql`, gerenciam a infraestrutura do SGBD e a geração de evidências:
-* `1-schema.sql`: Instruções estruturais para a criação automatizada do banco de dados e suas respectivas chaves relacionais.
-* `2-seed.sql`: Script responsável por executar a inserção automatizada dos dados limpos dos arquivos CSV para o MySQL.
-* `3-queries_consumo.sql`: Consultas prontas criadas para extrair relatórios estratégicos de tempos de espera superiores ao aceitável e gargalos operacionais por distrito.
+A inteligência do negócio reside na capacidade de responder queries complexas, tais como:
+> *"Quais territórios específicos registram os maiores tempos de espera e possuem, proporcionalmente, a menor oferta de linhas ativas?"*
 
 ---
 
-## Como Executar
+## 🗄️ Modelagem e Arquitetura de Dados
 
-1. Certifique-se de ter o **MySQL Server** ativo localmente na sua máquina.
-2. Clone este repositório:
-   ```bash
-   git clone [https://github.com/SEU-USUARIO/bd_deslocamento_sptrans.git](https://github.com/SEU-USUARIO/bd_deslocamento_sptrans.git)
-Acesse o terminal do seu SGBD (ou ferramenta visual de queries) e monte o esquema estrutural do banco:
+O banco foi projetado utilizando o modelo relacional (SQL) devido à forte consistência e natureza estruturada das entidades envolvidas.
+
+### 📐 Diagrama Relacional Textual (MER)
+```text
+  [Distrito] 1 --------- N [Ponto_parada]
+  [Distrito] 1 --------- N [Deslocamento_estimado] (Origem)
+  [Distrito] 1 --------- N [Deslocamento_estimado] (Destino)
+  [linha]    1 --------- N [Deslocamento_estimado]
+```
+
+### 📖 Dicionário de Dados
+
+#### 1. Tabela: `Distrito`
+| Atributo | Tipo de Dado | Restrição | Descrição |
+| :--- | :--- | :--- | :--- |
+| `id_distrito` | INT | PK, AI | Identificador único do distrito. |
+| `nome_distrito` | VARCHAR(100) | NOT NULL | Nome oficial do distrito de SP. |
+| `zona` | VARCHAR(20) | NOT NULL | Região geográfica (Ex: Zona Leste). |
+| `populacao_estimada` | INT | NOT NULL | População total estimada da região. |
+
+#### 2. Tabela: `linha`
+| Atributo | Tipo de Dado | Restrição | Descrição |
+| :--- | :--- | :--- | :--- |
+| `id_linha` | INT | PK, AI | Identificador interno da linha. |
+| `codigo_linha` | VARCHAR(20) | NOT NULL, UNIQUE | Código operacional da SPTrans (Ex: 2590-10). |
+| `nome_linha` | VARCHAR(150) | NOT NULL | Descrição do itinerário da linha. |
+| `tipo_dia` | VARCHAR(30) | NOT NULL | Escala de operação (Dia útil, Sábado, Domingo). |
+
+#### 3. Tabela: `Ponto_parada`
+| Atributo | Tipo de Dado | Restrição | Descrição |
+| :--- | :--- | :--- | :--- |
+| `id_ponto` | INT | PK, AI | Código de identificação física do ponto. |
+| `endereco_ponto` | VARCHAR(255) | NOT NULL | Endereço ou localização aproximada. |
+| `id_distrito` | INT | FK | Vínculo com a tabela de Distritos. |
+
+#### 4. Tabela: `Deslocamento_estimado`
+| Atributo | Tipo de Dado | Restrição | Descrição |
+| :--- | :--- | :--- | :--- |
+| `id_deslocamento` | INT | PK, AI | Chave primária do registro de métrica. |
+| `id_distrito_origem` | INT | FK | Distrito inicial da rota de viagem. |
+| `id_distrito_destino` | INT | FK | Distrito final de destino da viagem. |
+| `id_linha_utilizada` | INT | FK | Linha de ônibus monitorada. |
+| `tempo_medio_espera_minutos`| DECIMAL(5,2) | NOT NULL | Tempo médio de espera calculado no ponto. |
+
+---
+
+## 📂 Estrutura do Repositório
+
+O ambiente de produção foi modularizado para garantir a separação de conceitos (*Separation of Concerns*):
+
+```text
+├── data/                            # Camada de Persistência Física (Massa de Dados)
+│   ├── distritos.csv                # Carga de dados demográficos compilados
+│   ├── linhas.csv                   # Cadastro de frotas e itinerários
+│   ├── pontos_parada.csv            # Coordenadas urbanas de embarque
+│   └── deslocamentos_estimados.csv  # Matriz de tempos gerados por trajetos
+│
+├── sql/                             # Camada de Engenharia e Scripts SQL
+│   ├── 1-schema.sql                 # Data Definition Language (DDL) - Criação do Banco
+│   ├── 2-seed.sql                   # Scripts de carga automatizada via CSV
+│   └── 3-queries_consumo.sql        # Data Manipulation Language (DML) - Relatórios de Negócio
+└── README.md
+🚀 Como Executar
+Pré-requisitos
+Possuir o SGBD MySQL Server 8.0+ instalado localmente.
+
+Passos para Instalação
+Clone o repositório institucional:
+
+Bash
+git clone [https://github.com/sthe001148/bd_deslocamento_sptrans.git]
+Inicialize o servidor MySQL e execute o script de criação da arquitetura relacional
 
 SQL
 SOURCE sql/1-schema.sql;
-Execute o arquivo de população para alimentar as tabelas com a massa de dados coletada:
+Execute o script de semeadura (seed) para realizar o preenchimento das tabelas instanciadas através dos arquivos .csv
 
 SQL
 SOURCE sql/2-seed.sql;
-Utilize o script de consultas analíticas para visualizar as métricas finais geradas sobre a SPTrans:
+Execute as queries analíticas de consumo para auditar os resultados obtidos de mobilidade
 
 SQL
 SOURCE sql/3-queries_consumo.sql;
+👥 Equipe de Desenvolvimento
+A execução deste ecossistema foi dividida em etapas com os seguintes responsáveis técnicos
+
+Engenharia de Requisitos & Escopo: Desenvolvimento conjunto por todos os integrantes.
+
+Data Ingestion (Coleta de Dados Públicos): Bruna
+
+Data Quality (Tratamento e Filtragem de Dados): Nicole
+
+Database Architecture (Modelagem e DBA MySQL): Miguel
+
+Business Analytics (Documentação e Regras de Negócio): Stefany
