@@ -147,6 +147,9 @@ A execução deste ecossistema foi dividida em etapas com os seguintes responsá
 Engenharia de Requisitos & Escopo: Desenvolvimento conjunto por todos os integrantes.
 
 Coleta de Dados Públicos: [brunaluiza18](https://github.com/brunaluiza18)
+
 Tratamento e Filtragem de Dados: [nicolee-kats](https://github.com/nicolee-kats)
+
 Modelagem e DBA MySQL: [miguel676726](https://github.com/miguel676726)
+
 Documentação e Regras de Negócio: [sthe001148](https://github.com/sthe001148)
