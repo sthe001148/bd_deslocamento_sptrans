@@ -31,7 +31,7 @@
 
 ## 📖 Sobre o Projeto
 
-O **bd_deslocamento_sptrans** é um banco de dados relacional desenvolvido como entrega consolidada da unidade **UC03 (Modelagem de Dados e SQL)**. O projeto visa centralizar, estruturar e auditar dados operacionais de transporte público da SPTrans, mapeando gargalos logísticos estruturais de deslocamento na capital paulista.
+O **bd_deslocamento_sptrans** é um banco de dados relacional desenvolvido como entrega consolidada da qualificação de **Assistente de gestão de dados**. O projeto visa centralizar, estruturar e auditar dados operacionais de transporte público da SPTrans, mapeando gargalos logísticos estruturais de deslocamento na capital paulista.
 
 ---
 
@@ -148,7 +148,7 @@ SOURCE sql/3-queries_consumo.sql;
 
 A execução deste ecossistema foi dividida em etapas com os seguintes responsáveis técnicos
 Engenharia de Requisitos & Escopo: Desenvolvimento conjunto por todos os integrantes.
-Data Ingestion (Coleta de Dados Públicos): Bruna
-Data Quality (Tratamento e Filtragem de Dados): Nicole
-Database Architecture (Modelagem e DBA MySQL): Miguel
-Business Analytics (Documentação e Regras de Negócio): Stefany
+(Coleta de Dados Públicos): Bruna
+(Tratamento e Filtragem de Dados): Nicole
+(Modelagem e DBA MySQL): Miguel
+(Documentação e Regras de Negócio): Stefany
