@@ -59,6 +59,7 @@ O banco foi projetado utilizando o modelo relacional (SQL) devido à forte consi
 
 ### 📐 Diagrama Relacional Textual (MER)
 
+<img width="758" height="395" alt="image" src="https://github.com/user-attachments/assets/43811798-7b1a-42a2-89cf-b1e893a05c34" />
 
 
 ### 📖 Dicionário de Dados
